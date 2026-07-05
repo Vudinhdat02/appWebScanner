@@ -12,10 +12,12 @@
     <div class="controls">
         <input type="file" id="upload" accept="image/*">
         <button id="scanBtn">Quét văn bản</button>
+        <button id="debugBtn" style="background:#8e44ad;">Bật xem debug màu</button>
         <p>Lưu ý: Double-click từ vựng trên ảnh để thêm thủ công. Trỏ chuột vào danh sách để xem vị trí từ vựng.</p>
+        <p id="status" style="color:#888;"></p>
     </div>
 
-    <div clas""s="wrapper">
+    <div class="wrapper">
         <div id="canvas-container">
             <div class="zoom-controls">
                 <button onclick="changeZoom(0.1)">🔎</button>
@@ -29,7 +31,15 @@
                 <button onclick="addManualWord()" style="background: #27ae60;">Thêm</button>
             </div>
             <button onclick="copyWordList()" style="background: #3164d9; width: 100%;">Copy danh sách</button>
+            <p id="wordCount" style="font-weight: bold; margin: 10px 0;">Tổng số từ: 0</p>
             <ul id="wordList" style="list-style: none; padding: 0; margin-top: 10px;"></ul>
+
+            <details style="margin-top: 15px;">
+                <summary style="cursor:pointer; font-weight:bold; color:#555;">
+                    Từ khác được nhận diện (bấm để thêm) <span id="otherCount"></span>
+                </summary>
+                <ul id="otherWordList" style="list-style: none; padding: 0; margin-top: 10px;"></ul>
+            </details>
         </div>
     </div>
 
